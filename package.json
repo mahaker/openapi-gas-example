@@ -1,0 +1,19 @@
+{
+  "name": "openapi-gas-example",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "api:frontend": "openapi-generator-gas --spec openapi.yml --outfile frontend/src/openapi.ts --frontend",
+    "api:backend": "openapi-generator-gas --spec openapi.yml --outfile backend/src/openapi.ts --backend",
+    "build:backend": "cd backend ; npm run build && cp dist/* ../dist/",
+    "build:frontend": "cd frontend ; npm run build && cp dist/* ../dist/",
+    "prebuild": "rm -rf dist ; mkdir dist",
+    "build": "npm run build:frontend && npm run build:backend && cp appsscript.json dist",
+    "push": "clasp push"
+  },
+  "author": "Hideaki Matsunami <carbon0409@gmail.com>",
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "openapi-generator-gas": "^0.0.2"
+  }
+}

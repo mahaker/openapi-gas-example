@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: My OpenAPI spec
+  summary: example spec
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080
+    description: A local server
+
+paths:
+  /todo:
+    get:
+      summary: get TODO item
+      description: get TODO item
+      operationId: getTodoItem
+      parameters:
+        - name: itemId
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: specific TODO item
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - itemId
+                  - title
+                properties:
+                  itemId:
+                    type: integer
+                  title:
+                    type: string
+                  description:
+                    type: string
+    post:
+      summary: create TODO item
+      description: create TODO item
+      operationId: postTodoItem
+      parameters:
+        - name: title
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: description
+          in: query
+          schema:
+            type: string
+      responses:
+        200:
+          description: created TODO item
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - itemId
+                  - title
+                properties:
+                  itemId:
+                    type: integer
+                  title:
+                    type: string
+                  description:
+                    type: string
