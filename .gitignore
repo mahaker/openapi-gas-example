@@ -2,3 +2,5 @@ node_modules
 .clasp.json
 dist
 .clasp.json
+backend/src/openapi.ts
+frontend/src/openapi.ts
