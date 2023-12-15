@@ -1,11 +1,11 @@
-import * as APISPEC from './openapi';
+import * as api from './openapi';
 
 const doGet = () => {
   const html = HtmlService.createHtmlOutputFromFile('index.html').setTitle('gas-next-app');
   return html;
 };
 
-const getTodoItem: APISPEC.IGetTodoItem = (req) => {
+const getTodoItem: api.IGetTodoItem = (req) => {
   console.log('itemId: ', req.itemId);
 
   return {
@@ -15,7 +15,7 @@ const getTodoItem: APISPEC.IGetTodoItem = (req) => {
   };
 };
 
-const postTodoItem: APISPEC.IPostTodoItem = (req) => {
+const postTodoItem: api.IPostTodoItem = (req) => {
   console.log('req: ', req.title, req.description);
 
   return {
