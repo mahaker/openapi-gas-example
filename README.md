@@ -18,7 +18,7 @@ This is an example of Google Apps Script and [openapi-generator-gas](https://git
 2. Create .clasp.json
    - `cp .clasp.json.example .clasp.json`
 3. Update .clasp.json(Embed your GAS project ID)
-4. Run `npm install`
+4. Run `npm run bootstrap`
 5. Run `npm run build`
 6. Run `npm run push`
 7. Create new deploy for your GAS project

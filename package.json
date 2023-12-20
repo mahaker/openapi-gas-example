@@ -5,6 +5,7 @@
   "scripts": {
     "api:frontend": "openapi-generator-gas --spec openapi.yml --outfile frontend/src/openapi.ts --frontend",
     "api:backend": "openapi-generator-gas --spec openapi.yml --outfile backend/src/openapi.ts --backend",
+    "bootstrap": "npm install && cd backend ; npm install && cd ../frontend ; npm install",
     "build:backend": "cd backend ; npm run build && cp dist/* ../dist/",
     "build:frontend": "cd frontend ; npm run build && cp dist/* ../dist/",
     "prebuild": "rm -rf dist ; mkdir dist",
